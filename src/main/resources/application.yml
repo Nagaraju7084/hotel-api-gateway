@@ -5,10 +5,13 @@ spring:
       routes:
         - id: USER-SERVICE
           uri: "lb://USER-SERVICE"
-          predicates: Path=/api/*/**
+          predicates:
+            - Path=/api/users/**
         - id: HOTEL-SERVICE
           uri: "lb://HOTEL-SERVICE"
-          predicates: Path=/api/*/**
+          predicates:
+            - Path=/api/hotels/**
         - id: RATING-SERVICE
           uri: "lb://RATING-SERVICE"
-          predicates: Path=/api/*/**  
+          predicates:
+            - Path=/api/ratings/**
